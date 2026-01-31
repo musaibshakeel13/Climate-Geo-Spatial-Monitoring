@@ -233,14 +233,12 @@ function triggerAlert(msg,cls){
   alert(msg);
   logAction(msg);
 }
-
 /* ================= AUDIT LOGS ================= */
 function logAction(action){
   const t=new Date().toLocaleString();
   logs.push({user:currentRole,role:currentRole,action,time:t});
   renderLogs();
 }
-
 function renderLogs(){
   const tb=document.getElementById("logs");
   tb.innerHTML="";
@@ -248,7 +246,6 @@ function renderLogs(){
     tb.innerHTML+=`<tr><td>${l.user}</td><td>${l.role}</td><td>${l.action}</td><td>${l.time}</td></tr>`;
   });
 }
-
 function exportLogs(){
   if(currentRole!=="admin") return;
   let csv="User,Role,Action,Time\n";
@@ -262,6 +259,3 @@ function exportLogs(){
 </script>
 </body>
   </html>
-
-
-  
